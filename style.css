@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
+
+:root {
+  --primary-color: #6b4226;
+  --hover-color: #4d2c18;
+  --accent-color: #ffcc00;
+  --text-color: #f5f5dc;
+}
+
+/* House Themes */
+body.gryffindor { --primary-color: #7f0909; --hover-color: #3c0909; --accent-color: #ffcc00; }
+body.slytherin  { --primary-color: #0d4d4d; --hover-color: #072727; --accent-color: #a8ffb0; }
+body.ravenclaw  { --primary-color: #0e1a40; --hover-color: #061026; --accent-color: #d7d7ff; }
+body.hufflepuff { --primary-color: #ffdb00; --hover-color: #cba900; --accent-color: #000000;  --text-color:black;}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+body {
+    background: #1a1a1a url('image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: var(--text-color);
+    font-family: 'Cinzel Decorative', cursive;
+    text-align: center;
+    padding: 2em;
+    cursor: url('https://cur.cursors-4u.net/cursors/cur-13/cur1116.cur'), auto;
+    transition: background-color 0.5s ease;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: gold;
+    margin-bottom: 1em;
+    text-shadow: 2px 2px #000;
+}
+
+table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+th, td {
+    border: 1px solid var(--accent-color);
+    padding: 10px;
+    color: #fff;
+}
+
+a, .btn, button {
+    font-family: 'Cinzel Decorative', cursive;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 0 10px var(--accent-color);
+    transition: all 0.3s ease-in-out;
+}
+
+a:hover, .btn:hover, button:hover {
+    background-color: var(--hover-color);
+    box-shadow: 0 0 15px var(--accent-color);
+    cursor: pointer;
+}
+
+/* ─── FORM LABEL & INPUT CONSISTENCY ───────────────────────────────────── */
+
+form label {
+    display: inline-block;
+    width: 160px;           /* fixed label width aligns all fields */
+    text-align: right;
+    margin-right: 1em;
+    font-size: 1.1rem;
+    vertical-align: middle;
+}
+
+form input[type="text"],
+form input[type="number"],
+form select {
+    display: inline-block;
+    width: 60%;             /* consistent field width */
+    max-width: 500px;
+    height: 3rem;           /* fixed height for visual uniformity */
+    padding: 0 1rem;
+    margin: 0.5rem 0;
+    border: 2px solid var(--accent-color);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+    font-size: 1rem;
+    box-sizing: border-box; /* includes padding in width/height */
+    box-shadow: 0 0 10px var(--accent-color);
+    vertical-align: middle;
+}
+
+/* 🕯️ Floating Candle Emoji Animation */
+.floating-emoji {
+    position: absolute;
+    font-size: 2rem;
+    animation: floatEmoji 6s ease-in-out infinite;
+    opacity: 0.8;
+}
+
+.floating-emoji:nth-child(1) { top: 80px; left: 20%; animation-delay: 0s; }
+.floating-emoji:nth-child(2) { top: 120px; left: 40%; animation-delay: 1s; }
+.floating-emoji:nth-child(3) { top: 100px; left: 60%; animation-delay: 2s; }
+.floating-emoji:nth-child(4) { top: 90px; left: 80%; animation-delay: 3s; }
+
+@keyframes floatEmoji {
+    0% { transform: translateY(0); opacity: 0.8; }
+    50% { transform: translateY(-20px); opacity: 1; }
+    100% { transform: translateY(0); opacity: 0.8; }
+}
